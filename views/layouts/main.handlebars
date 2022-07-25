@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tech Blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+  <div>
+    <header class="d-flex w-100 ">
+      <h4 class="mt-2 ml-2 mr-auto p-2 d-flex align-items-center"><a href="/">The Tech Blog</a></h4>
+        <nav class="d-flex align-items-center m-3">
+            {{#if loggedIn}}
+            <a href="/dashboard" class="mr-3">dashboard</a>  
+            <button id="logout" class="bg-dark text-white">logout</button>
+            {{else}}
+            <a href="/login">  <button class="bg-dark text-white">login </button></a>
+            {{/if}}
+        </nav>
+    </header>
+
+    <main>
+            {{{ body }}}
+    </main>
+  </div>
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+</body>
+
+</html>
